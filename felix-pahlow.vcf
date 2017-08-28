@@ -1,0 +1,10 @@
+BEGIN:VCARD
+N:Pahlow;Felix;;;
+ADR;DOM;PARCEL;HOME:;;;Halle (Saale);Saxony-Anhalt;06120;Germany
+EMAIL;INTERNET:felix@wohlpa.de
+EMAIL;INTERNET:felix@halle.tech
+TEL;WORK:+49 345 5161970
+TEL;FAX;WORK:+49 345 9599053
+URL;WORK:https://halle.tech
+URL:https://wohlpa.de
+END:VCARD

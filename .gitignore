@@ -1,0 +1,7 @@
+/app/vendor/*
+/app/.mail.cfg
+*.pem
+*.key
+*.pfx
+*.p12
+
