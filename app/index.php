@@ -144,6 +144,12 @@ function sendMessage() {
 	  ->setReplyTo( [$_POST['email'] => $_POST['name']] )
 	  ->setBody( $_POST['message'] );
 
+	$headers = $message->getHeaders();
+	$headers->addTextHeader( 'User-Agent', $_SERVER['HTTP_USER_AGENT'] );
+	$headers->addTextHeader( 'X-Mailer', 'https://wohlpa.de/#contact' );
+	$headers->addTextHeader( 'Received',
+		"from {$_SERVER['REMOTE_ADDR']} by {$_SERVER['SERVER_ADDR']} ({$_SERVER['HTTP_HOST']}) with Swift " . Swift::VERSION . '; ' . date('D, j M Y H:i:s O') );
+
 	$smimeSigner = new Swift_Signers_SMimeSigner();
 	$smimeSigner->setSignCertificate( $cfg['sign']['cert'], $cfg['sign']['key'] );
 	$smimeSigner->setEncryptCertificate( $cfg['crypt-cert'] );
